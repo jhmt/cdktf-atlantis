@@ -1,0 +1,57 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "local",
+      "stackName": "vpc-example",
+      "version": "0.9.4"
+    },
+    "outputs": {
+    }
+  },
+  "provider": {
+    "aws": [
+      {
+        "profile": "clouduser",
+        "region": "us-east-1"
+      }
+    ]
+  },
+  "resource": {
+    "aws_subnet": {
+      "my-subnet": {
+        "//": {
+          "metadata": {
+            "path": "vpc-example/my-subnet",
+            "uniqueId": "my-subnet"
+          }
+        },
+        "cidr_block": "10.0.0.0/24",
+        "vpc_id": "${aws_vpc.my-vpc.id}"
+      }
+    },
+    "aws_vpc": {
+      "my-vpc": {
+        "//": {
+          "metadata": {
+            "path": "vpc-example/my-vpc",
+            "uniqueId": "my-vpc"
+          }
+        },
+        "cidr_block": "10.0.0.0/16"
+      }
+    }
+  },
+  "terraform": {
+    "backend": {
+      "local": {
+        "path": "/home/jhmt/dev/cdktf-atlantis/terraform.vpc-example.tfstate"
+      }
+    },
+    "required_providers": {
+      "aws": {
+        "source": "aws",
+        "version": "~> 2.0"
+      }
+    }
+  }
+}

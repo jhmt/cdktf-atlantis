@@ -1,0 +1,13 @@
+{
+  "version": "0.9.4",
+  "stacks": {
+    "vpc-example": {
+      "name": "vpc-example",
+      "constructPath": "vpc-example",
+      "workingDirectory": "stacks/vpc-example",
+      "synthesizedStackPath": "stacks/vpc-example/cdk.tf.json",
+      "annotations": [],
+      "dependencies": []
+    }
+  }
+}

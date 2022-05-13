@@ -22,5 +22,13 @@
   "dependencies": {
     "cdktf": "^0.9.4",
     "constructs": "^10.1.7"
+  },
+  "devDependencies": {
+    "husky": "4.3.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run synth && git add ./cdktf.out/*"
+    }
   }
 }
